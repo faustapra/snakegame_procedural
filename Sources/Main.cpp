@@ -1,14 +1,15 @@
 #include <SFML/Graphics.hpp>
 #include <iostream>
 #include <cstdlib>
+//#include "defines.h"
 
 
 using namespace sf;
 using namespace std;
 
-int SIZE = 25;
-int WIDTH = SIZE * SIZE;
-int HEIGHT = SIZE * SIZE;
+const int SIZE = 20;
+const int WIDTH = 500;
+const int HEIGHT = 500;
 int NUMBER = 3;
 int DIRECTION = 1;
 
@@ -25,7 +26,7 @@ struct FRUIT {
 } f;
 
 
-void MOVING()
+static void MOVING()
 {
 
     for (int i = NUMBER; i > 0; i--)
@@ -45,7 +46,7 @@ void MOVING()
 
     if (DIRECTION == 2)
     {
-        s[0].y -= 1;
+        s[0].y += 1;
     }
 
     if (DIRECTION == 3)
@@ -53,10 +54,16 @@ void MOVING()
         s[0].x -= 1;
     }
 
-
+   if (s[0].x == f.x && s[0].y == f.y)
+    {
+        NUMBER++;
+        f.x = rand() % SIZE;
+        f.y = rand() % SIZE;
+    }
+   //GYVATEI ISEJUS IS KRASTU 
+   if (s[0].x < 0) s[0].x = 25;     
+   
 }
-
-
 
 
 
@@ -76,6 +83,11 @@ int main()
 
 
     Clock timer;
+
+    f.x = rand() % SIZE;
+    f.y = rand() % SIZE;
+
+
 
 
     while (app.isOpen())
@@ -106,9 +118,14 @@ int main()
         app.clear();
 
 
-
-
-
+        for (int i = 0; i < NUMBER; i++)
+        {
+            box.setPosition(s[i].x * SIZE, s[i].y * SIZE);
+            app.draw(box);
+        }
+        apple.setPosition(f.x * SIZE, f.y * SIZE);
+        app.draw(apple);
+       
         app.display();
-    }
+     }
     }
