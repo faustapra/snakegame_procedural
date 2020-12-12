@@ -1,29 +1,16 @@
+
 #include <SFML/Graphics.hpp>
 #include <iostream>
 #include <cstdlib>
-//#include "defines.h"
-
+#include "Defines.h"
+#include "Objects.h"
 
 using namespace sf;
 using namespace std;
 
-const int SIZE = 20;
-const int WIDTH = 500;
-const int HEIGHT = 500;
+int game = 0;
 int NUMBER = 3;
 int DIRECTION = 1;
-
-struct SNAKE {
-    int x;
-    int y;
-} s[100];
-
-
-
-struct FRUIT {
-    int x;
-    int y;
-} f;
 
 
 static void MOVING()
@@ -56,13 +43,22 @@ static void MOVING()
 
    if (s[0].x == f.x && s[0].y == f.y)
     {
-        NUMBER++;
+        NUMBER+=2;              //GYVATE PAILGEJA PALIETUS OBUOLI
         f.x = rand() % SIZE;
         f.y = rand() % SIZE;
     }
+
    //GYVATEI ISEJUS IS KRASTU 
-   if (s[0].x < 0) s[0].x = 25;     
-   
+   if (s[0].x > SKAICIUS) s[0].x = 0; if (s[0].x < 0) s[0].x = SKAICIUS;
+   if (s[0].y > SKAICIUS) s[0].y = 0; if (s[0].y < 0) s[0].y = SKAICIUS;
+  
+   //JEI GYVATE SAVE PALIECIA
+   for (int i = 1; i < NUMBER; i++)
+   {
+       if (s[0].x == s[i].x && s[0].y == s[i].y) { game = 1; }
+   }
+
+       
 }
 
 
@@ -86,7 +82,6 @@ int main()
 
     f.x = rand() % SIZE;
     f.y = rand() % SIZE;
-
 
 
 
@@ -126,6 +121,16 @@ int main()
         apple.setPosition(f.x * SIZE, f.y * SIZE);
         app.draw(apple);
        
+        //JEI GYVATE SAVE PALIECIA
+        if (game == 1) {
+            app.close();
+            system("pause");
+            
+        }
+
+
         app.display();
+
+        
      }
     }

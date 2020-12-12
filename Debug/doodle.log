@@ -1,6 +1,6 @@
 ﻿  Main.cpp
-C:\Users\faust\Downloads\doodle-jump\repozic1\Sources\Main.cpp(123,51): warning C4244: 'argument': conversion from 'int' to 'float', possible loss of data
-C:\Users\faust\Downloads\doodle-jump\repozic1\Sources\Main.cpp(123,36): warning C4244: 'argument': conversion from 'int' to 'float', possible loss of data
-C:\Users\faust\Downloads\doodle-jump\repozic1\Sources\Main.cpp(126,43): warning C4244: 'argument': conversion from 'int' to 'float', possible loss of data
-C:\Users\faust\Downloads\doodle-jump\repozic1\Sources\Main.cpp(126,31): warning C4244: 'argument': conversion from 'int' to 'float', possible loss of data
+C:\Users\faust\Downloads\doodle-jump\repozic1\Sources\Main.cpp(118,51): warning C4244: 'argument': conversion from 'int' to 'float', possible loss of data
+C:\Users\faust\Downloads\doodle-jump\repozic1\Sources\Main.cpp(118,36): warning C4244: 'argument': conversion from 'int' to 'float', possible loss of data
+C:\Users\faust\Downloads\doodle-jump\repozic1\Sources\Main.cpp(121,43): warning C4244: 'argument': conversion from 'int' to 'float', possible loss of data
+C:\Users\faust\Downloads\doodle-jump\repozic1\Sources\Main.cpp(121,31): warning C4244: 'argument': conversion from 'int' to 'float', possible loss of data
   doodle.vcxproj -> C:\Users\faust\Downloads\doodle-jump\repozic1\Debug\doodle.exe
